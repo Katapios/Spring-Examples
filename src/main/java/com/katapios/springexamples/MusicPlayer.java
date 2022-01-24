@@ -1,44 +1,53 @@
 package com.katapios.springexamples;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import java.util.Random;
 
+@Component
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
+    private PopMusic popMusic;
+    @Value("${musicPlayer.name}")
     private String name;
+    @Value("${musicPlayer.volume}")
     private int volume;
 
-    //IoC
-    public MusicPlayer(List<Music> musicList) {
-        this.musicList = musicList;
-    }
 
-    public MusicPlayer() {
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, PopMusic popMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
+        this.popMusic = popMusic;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getVolume() {
         return volume;
     }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
+    public void playMusic(MusicGenre genre) {
+        Random random = new Random();
 
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
+        int randomNumber = random.nextInt(3);
 
-    public void playMusic(){
-        for(Music music : musicList) {
-            System.out.println("Playing: " + music.getSong());
+        switch (genre){
+            case CLASSICAL:
+                System.out.println("Random classical song: " + classicalMusic.getSongs().get(randomNumber));
+                break;
+            case ROCK:
+                System.out.println("Random rock song: " + rockMusic.getSongs().get(randomNumber));
+                break;
+            case POP:
+                System.out.println("Random pop song: " + popMusic.getSongs().get(randomNumber));
+                break;
+            default:
         }
+
     }
 }

@@ -1,8 +1,21 @@
 package com.katapios.springexamples;
 
+import org.springframework.stereotype.Component;
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
 public class RockMusic implements Music{
+    private List<String> songs = new ArrayList<>();
+
+    {
+        songs.add("The wind of change");
+        songs.add("Californication");
+        songs.add("Bloody roots");
+    }
+
     @Override
-    public String getSong() {
-        return "Wind cries Marry";
+    public List<String> getSongs() {
+        return songs;
     }
 }
