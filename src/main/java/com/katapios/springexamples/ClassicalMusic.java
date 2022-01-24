@@ -8,7 +8,7 @@ import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
 //@Scope("singleton")
 public class ClassicalMusic implements Music{
     private List<String> songs = new ArrayList<>();

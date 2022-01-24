@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import java.util.Random;
 
-@Component
+//@Component
 public class MusicPlayer {
     private ClassicalMusic classicalMusic;
     private RockMusic rockMusic;
@@ -16,7 +16,7 @@ public class MusicPlayer {
     private int volume;
 
 
-    @Autowired
+    //@Autowired
     public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, PopMusic popMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
