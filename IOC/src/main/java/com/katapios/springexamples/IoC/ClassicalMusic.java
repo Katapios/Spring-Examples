@@ -1,7 +1,4 @@
-package com.katapios.springexamples;
-
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+package com.katapios.springexamples.IoC;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

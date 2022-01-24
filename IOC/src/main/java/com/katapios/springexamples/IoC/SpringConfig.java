@@ -1,4 +1,4 @@
-package com.katapios.springexamples;
+package com.katapios.springexamples.IoC;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

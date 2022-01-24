@@ -1,6 +1,5 @@
-package com.katapios.springexamples;
+package com.katapios.springexamples.IoC;
 
-import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
