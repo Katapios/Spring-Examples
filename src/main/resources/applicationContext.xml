@@ -5,9 +5,13 @@
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="testBean"
-          class="com.katapios.springexamples.TestBean">
-        <constructor-arg value="Katapios"/>
+    <bean id="musicBean"
+          class="com.katapios.springexamples.ClassicalMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class="com.katapios.springexamples.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
     </bean>
 
 </beans>
